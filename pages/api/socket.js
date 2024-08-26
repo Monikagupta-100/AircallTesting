@@ -9,9 +9,12 @@ var skipped_sessions = {};
 var active_sessions_users = {};
 
 const SocketHandler = (req, res) => {
+  console.log("Hello Running port");
   if (res.socket.server.io) {
+    console.log("Hello Running1 port");
     return res.end("hello");
   }
+  console.log("Hello Running2 port");
   const io = new Server(res.socket.server, {
     transports: ["websocket", "polling"],
   });
